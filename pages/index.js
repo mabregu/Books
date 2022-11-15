@@ -13,7 +13,12 @@ export default function Home() {
       
       <h1>Quiosquito</h1>
       
-      <Link href="/libros">Book List</Link>
+      <Link
+        href="/libros"
+        data-cy="link-to-books"
+      >
+        Book List
+      </Link>
     </div>
   )
 }

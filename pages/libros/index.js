@@ -49,14 +49,20 @@ const BookList = ({ books }) => {
                 {JSON.stringify(books, null, 2)}
             </pre> */}
             
-            <ul>
+            <ul data-cy="books-list">
                 {books.data.map(book => (
                     <li key={book.id}>
-                        <Link href={`/libros/${book.id}`}>
+                        <Link
+                            href={`/libros/${book.id}`}
+                            data-cy={`link-to-book-${book.id}`}
+                        >
                             {book.title}
                         </Link>
                         {' - '}
-                        <Link href={`/libros/${book.id}/editar`}>
+                        <Link
+                            href={`/libros/${book.id}/editar`}
+                            data-cy={`link-to-edit-book-${book.id}`}
+                        >
                             Editar
                         </Link>
                         {' - '}
@@ -64,7 +70,9 @@ const BookList = ({ books }) => {
                             onSubmit={(e) => handleDelete(e, book.id)}
                             style={{ display: 'inline' }}
                         >
-                            <button>Eliminar</button>
+                            <button data-cy={`delete-book-${book.id}`}>
+                                Eliminar
+                            </button>
                         </form>
                     </li>
                 ))}

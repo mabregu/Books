@@ -67,12 +67,14 @@ const BookEdit = ({book}) => {
             <form id="book-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="title">Título</label>
-                    <input onChange={e => setBookTitle(e.target.value)}
+                    <input
+                        onChange={e => setBookTitle(e.target.value)}
                         type="text"
                         name="title"
                         id="title"
                         value={String(bookTitle)}
                         disabled={submitting}
+                        data-cy="book-title"
                     />
                     {errors.title && (
                         <span style={{ color: 'red', display: 'block' }}>
@@ -80,7 +82,10 @@ const BookEdit = ({book}) => {
                         </span>
                     )}
                 </div>
-                <button disabled={submitting}>
+                <button
+                    disabled={submitting}
+                    data-cy="submit-button"
+                >
                     {submitting ? 'Enviando...' : 'Enviar'}
                 </button>
             </form>

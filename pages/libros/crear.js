@@ -66,7 +66,10 @@ const BookCreate = () => {
                         </span>
                     )}
                 </div>
-                <button disabled={submitting}>
+                <button
+                    disabled={submitting}
+                    data-cy="submit-button"
+                >
                     {submitting ? 'Enviando...' : 'Enviar'}
                 </button>
             </form>
